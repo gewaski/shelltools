@@ -1,0 +1,17 @@
+#!/bin/bash
+# zhangwei13 <alucard.hust@gmail.com>
+
+allServers=(
+"server1" "1.1.1.1"
+"server2" "127.0.0.1"
+)
+
+if [ -z "$1" ];then
+    for ((i=0; i<${#allServers[@]}; i+=2)); do
+        printf "%2s %15s %20s\n" "$((i/2))" ${allServers[$((i))]} ${allServers[$((i+1))]}
+    done
+else
+    echo "login to " ${allServers[$(($1*2))]} ${allServers[$(($1*2+1))]}
+    ssh root@${allServers[$(($1*2+1))]}
+fi
+
