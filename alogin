@@ -6,12 +6,15 @@ allServers=(
 "server2" "127.0.0.1"
 )
 
-if [ -z "$1" ];then
+user=$1
+
+if [ -z "$2" ];then
+    printf `basename $0`" [user] [serverIndex]\n"
     for ((i=0; i<${#allServers[@]}; i+=2)); do
         printf "%2s %15s %20s\n" "$((i/2))" ${allServers[$((i))]} ${allServers[$((i+1))]}
     done
 else
-    echo "login to " ${allServers[$(($1*2))]} ${allServers[$(($1*2+1))]}
-    ssh root@${allServers[$(($1*2+1))]}
+    echo "login to " ${allServers[$(($2*2))]} ${allServers[$(($2*2+1))]}
+    ssh $user@${allServers[$(($2*2+1))]}
 fi
 

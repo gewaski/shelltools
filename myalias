@@ -3,3 +3,8 @@
 frequentdirs=("~/workspace/xxx" "~/workspace/yyy"); 
 alias cdr='cdr(){ cmd=$1; subdir=$2; if [[ ${cmd} =~ ^\.+$ ]];then cmd=${cmd%.}; directory=$(echo $cmd | sed "s/\./\.\.\//g"); else directory=${frequentdirs[$((cmd-1))]}/$subdir; fi; cd $directory; };cdr'
 alias cdl='cdl(){ for((i=0; i<${#frequentdirs[@]}; i+=1));do printf "$((i+1)):\t${frequentdirs[$((i))]}\n"; done; }; cdl'
+
+alias alogin_root="/path/to/alogin root"
+alias alogin="/path/to/alogin"
+alias ascp_root="/path/to/ascp root"
+alias ascp="/path/to/ascp"
