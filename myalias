@@ -8,3 +8,6 @@ alias alogin_root="/path/to/alogin root"
 alias alogin="/path/to/alogin"
 alias ascp_root="/path/to/ascp root"
 alias ascp="/path/to/ascp"
+
+alias tomcattail='tt(){ tail -f /path/to/tomcat/logs/catalina.out; };tt'
+
